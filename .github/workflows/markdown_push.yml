@@ -1,0 +1,17 @@
+name: Notify Main Repo on Markdown Update
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger dispatch in main repo
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: yourusername/main-repo   # replace with your main repo (owner/repo)
+          event-type: markdown-updated

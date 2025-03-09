@@ -1,6 +1,8 @@
 ---
 ---
 
-@import "../_sass/normalize";
-@import "../_sass/code";
-@import "../_sass/style";
+@use "../_sass/normalize";
+@use "../_sass/code";
+@use "../_sass/style";
+
+@use "sass:color";

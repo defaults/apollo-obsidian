@@ -1,31 +1,32 @@
-title:               My digital garden
-include:             ['_pages']
-exclude:             ['_includes/notes_graph.json']
-# You may need to change the base URL depending on your deploy configuration.
-baseurl:             ''
+title: Apollo
+url: https://apollo.vikash.me     # add your site URL if needed
+baseurl: ''                       # adjust if your site is in a subfolder
 
-# If you are using a host that cannot resolve URLs that do
-# not end with .html (such as Neocities), set this to 'true'.
-use_html_extension:  false
+# Include directories that you want Jekyll to process
+include: ['_pages']
 
-# Set to `true` to open non-internal links in new tabs, or
-# set to `false` to open non-internal links in current tab.
+# Exclude files or directories not meant for the final build
+exclude: ['_includes/notes_graph.json', 'node_modules', 'vendor']
+
+# Use .html extension? (set false if you prefer pretty URLs without .html)
+use_html_extension: false
+
+# Open external links in new tab for privacy/safety
 open_external_links_in_new_tab: true
 
-# Set to `true` to replace tweet URLs with Twitter embeds.
-# Note that doing so will negatively the reader's privacy
-# as their browser will communicate with Twitter's servers.
+# Replace tweet URLs with embeds? (beware of privacy tradeoffs)
 embed_tweets: false
 
-permalink:           pretty
-relative_permalinks: false
+permalink: pretty
 
 plugins:
   - jekyll-last-modified-at
+  - jekyll-seo-tag     # added for better SEO
+  - jekyll-feed        # added for RSS
 
 sass:
-  sass_dir:          _sass
-  style:            :compressed
+  sass_dir: _sass
+  style: :compressed
 
 collections:
   notes:
@@ -36,8 +37,8 @@ defaults:
   - scope:
       path: "**/*"
     values:
-      layout: "default"
+      layout: default
   - scope:
       path: "_notes/**/*.md"
     values:
-      layout: "note"
+      layout: note

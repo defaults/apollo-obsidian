@@ -1,0 +1,12 @@
+runtime: go122
+
+handlers:
+  # Serve the index file for the root URL
+  - url: /
+    static_files: _site/index.html
+    upload: _site/index.html
+
+  # For any other URL, serve the corresponding file from _site
+  - url: /(.*)
+    static_files: _site/\1
+    upload: _site/(.*)
